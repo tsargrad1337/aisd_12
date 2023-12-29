@@ -14,7 +14,7 @@ def result_sum(det_x, t):
 
     while True:
         n += 1
-        det_x_pow *= np.dot(det_x, det_x) # Вычисляем х**(2n)
+        det_x_pow *= det_x**2 # Вычисляем х**(2n)
         fact *= (2 * n - 1) * (2 * n)  # Вычисляем факториал в знаменателе
         
         term = ((-1)**(n-1)) * det_x_pow / fact  # Вычисляем очередное слагаемое
