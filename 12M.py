@@ -8,16 +8,21 @@ def result_sum(det_x, t):
     fact = 1
     current_sum = 0
     det_x_pow = det_x
+    det_x_pow_fin = 1
 
+    
     first_term = (-1) * det_x_pow / fact
     current_sum += first_term
 
     while True:
-        n += 1
-        det_x_pow *= det_x**2 # Вычисляем х**(2n)
-        fact *= (2 * n - 1) * (2 * n)  # Вычисляем факториал в знаменателе
+        n += 1 
+
+        det_x_pow = np.power(det_x_pow, 2) # Вычисляем х**(2n)
+        det_x_pow_fin *= det_x_pow
+        fact *= (2 * n - 1) * (2 * n) # Вычисляем факториал в знаменателе
+       
         
-        term = ((-1)**(n-1)) * det_x_pow / fact  # Вычисляем очередное слагаемое
+        term = ((-1)**(n-1)) * det_x_pow_fin / fact  # Вычисляем очередное слагаемое
 
         current_sum += term if n % 2 == 0 else -term
 
