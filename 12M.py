@@ -17,7 +17,7 @@ def result_sum(det_x, t):
     while True:
         n += 1 
 
-        det_x_pow = np.power(det_x_pow, 2) # Вычисляем х**(2n)
+        det_x_pow = np.power(det_x_pow, 2)
         det_x_pow_fin *= det_x_pow # Осуществляем перемножение матриц
         fact *= (2 * n - 1) * (2 * n) # Вычисляем факториал в знаменателе
        
